@@ -1,7 +1,8 @@
 version: '3'
 services:
   packet-forwarder:
-    image: hm-pktfwd:latest
+    image: MrBricker/nebra-hm-pktfwd:latest
+    #image: hm-pktfwd:latest
     restart: always
     privileged: true
     environment:
@@ -12,8 +13,9 @@ services:
     devices:
       - "/dev/spidev1.0:/dev/spidev32766.0"
   helium-miner:
-    # image: nebraltd/hm-miner:arm64-ea828a3
-    image: quay.io/team-helium/miner:miner-arm64_2022.01.29.0_GA
+    image: MrBricker/hm-miner:latest
+    #image: nebraltd/hm-miner:arm64-ea828a3
+    #image: quay.io/team-helium/miner:miner-arm64_2022.01.29.0_GA
     expose:
       - "1680"
       - "4467"
